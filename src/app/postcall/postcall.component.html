@@ -1,0 +1,31 @@
+<p>postcall works!</p>
+
+
+<ul *ngFor="let mystudent of mystudents">
+    <li>{{mystudent.name}} - {{mystudent.salary}} -{{mystudent.contact}} </li>
+</ul>
+<button type="button"  class="btn btn-sm btn-info">New Emp</button>
+<br><br>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Contact</th>
+        <th scope="col">Action</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mystudent of mystudents">
+        <th scope="row">{{mystudent.id}}</th>
+        <td>{{mystudent.name}}</td>
+        <td>{{mystudent.salary}}</td>
+        <td>{{mystudent.contact}}</td>
+        <td><button type="button" class="btn btn-sm btn-success">Update</button> &nbsp;
+            <button type="button" (click)="onDelete(mystudent.id)" class="btn btn-sm btn-danger">Delete</button></td>
+      </tr>
+     
+    </tbody>
+  </table>
